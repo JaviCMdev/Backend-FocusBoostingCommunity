@@ -1,4 +1,4 @@
-const  User  = require('../models/user.js');
+const  User  = require('../user/model/user');
 
 module.exports = (req, res, next) => {
     let _id = req.body._id;
@@ -6,7 +6,7 @@ module.exports = (req, res, next) => {
     User.find({
          _id : _id 
     }).then(foundUser => {
-        if(foundUser[0].rol == "admin"){
+        if(foundUser[0].role == "admin"){
             next();
         }else {
             res.send(`Forbidden access`)
