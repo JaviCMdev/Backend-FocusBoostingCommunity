@@ -3,9 +3,7 @@
 - Este proyecto es la creacion del Backend de una web de venta de diversos servicios para el videojuego "World of Warcraft", usando como moneda de cambio el propio oro dentro del juego, el fin de este proyecto es meramente educativo pero no se descarta en un futuro que salga a la luz, dado que no hay ningun tipo de beneficio lucrativo.
 
 **Tecnologias Usadas**
-- JavaScript
-- MongoDB
-- Mongoose
+![js](https://user-images.githubusercontent.com/114490860/222938175-98f88838-1bdc-4255-a3cb-d14e8a614a9c.png)![mongodb](https://user-images.githubusercontent.com/114490860/222938180-670123f9-e7b5-444d-a768-3b99d10df020.png)![mongoose](https://user-images.githubusercontent.com/114490860/222938190-5aa3f244-5fd4-4dbb-b0fd-9ba1d1ee7e64.png)
 
 **Categorias**
 - Usuarios: Creacion y logging de usuarios.
