@@ -17,7 +17,7 @@ UsersController.newUser = async (req, res) => {
             password: password,
             battletag: req.body.battletag,
             discord: req.body.discord,
-            role: req.body.role,
+            role: "user",
             server: req.body.server
         })
 
