@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const serviceSchema = new Schema ({
+const raidSchema = new Schema ({
     name: {
         type: String,
         required: true,
@@ -11,10 +11,7 @@ const serviceSchema = new Schema ({
         type: Number,
         required: true
     },
-    img: {
-        type: String
-    }
 });
 
-const Service = mongoose.model('Service', serviceSchema);
-module.exports = Service;
+const Raid = mongoose.model('Raid', raidSchema);
+module.exports = Raid;
