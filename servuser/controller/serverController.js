@@ -41,11 +41,12 @@ serverController.updateServer = async (req, res) => {
 
     let newName = req.body.name;
     let newLocation = req.body.location;
+    let idserver = req.body.idserver
 
     try {
         let updated = await Server.findOneAndUpdate(
 
-            { _id: _id },
+            { _id: idserver },
 
             {
                 name: newName,

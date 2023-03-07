@@ -6,7 +6,7 @@ const isAdmin = require('../../middlewares/isAdmin');
 
 const serverController = require('../controller/serverController')
 
-router.get('/getAll', isAdmin, serverController.getAllservers);
+router.post('/getAll', isAdmin, serverController.getAllservers);
 router.post("/newServer", isAdmin, serverController.newServer);
 router.put("/updateServer", isAdmin, serverController.updateServer);
 router.delete("/deleteServer", isAdmin, serverController.deleteServer);

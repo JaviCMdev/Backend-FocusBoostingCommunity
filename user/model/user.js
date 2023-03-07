@@ -28,6 +28,9 @@ const userSchema = new Schema ({
         type: String,
     },
     server: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'Role'
+    },
+    created: {
         type: String
     }
 });

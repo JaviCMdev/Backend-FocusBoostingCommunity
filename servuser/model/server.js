@@ -9,8 +9,7 @@ const serverSchema = new Schema({
     },
     location: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     }
 });
 

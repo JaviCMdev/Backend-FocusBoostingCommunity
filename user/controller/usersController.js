@@ -18,7 +18,8 @@ UsersController.newUser = async (req, res) => {
             battletag: req.body.battletag,
             discord: req.body.discord,
             role: "user",
-            server: req.body.server
+            server: req.body.server,
+            created: req.body.created
         })
 
         if (user) {
