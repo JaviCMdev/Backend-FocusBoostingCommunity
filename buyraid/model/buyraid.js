@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const purchasemountSchema = new Schema ({
+const purchaseraidSchema = new Schema ({
     idUser: {
         type: mongoose.Schema.Types.ObjectId, ref: 'User',
         required: true,
     },
-    idMount: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'Mount',
+    idRaid: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'Raid',
         required: true
     },
     price: {
@@ -28,5 +28,5 @@ const purchasemountSchema = new Schema ({
     }
 });
 
-const Purchasemount = mongoose.model('Purchasemount', purchasemountSchema);
-module.exports = Purchasemount;
+const Purchaseraid = mongoose.model('Purchaseraid', purchaseraidSchema);
+module.exports = Purchaseraid;
