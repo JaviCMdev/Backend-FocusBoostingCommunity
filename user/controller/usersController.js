@@ -2,6 +2,7 @@ const User = require('../model/user');
 const bcrypt = require('bcrypt');
 const jsonwebtoken = require('jsonwebtoken');
 const authConfig = require('../../config/config');
+const dayjs = require('dayjs');
 
 const UsersController = {};
 
@@ -17,16 +18,16 @@ UsersController.newUser = async (req, res) => {
             password: password,
             battletag: req.body.battletag,
             discord: req.body.discord,
-            role: "user",
             server: req.body.server,
-            created: req.body.created
+            role: "user",
+            created: dayjs().format('DD-MM-YYYY')
         })
 
         if (user) {
             res.send({ "Message": `El usuario ${user.name} se ha creado correctamente` })
         }
     } catch (error) {
-        res.send(error)
+        res.send("Error" + error)
     }
 
 };
@@ -35,7 +36,9 @@ UsersController.getAllUsers = async (req, res) => {
     // let rol = req.body.rol;
     try {
         // if (rol == "admin") {
-            let result = await User.find({});
+            let result = await User.find({})
+                // .populate('server');
+
             if (result.length > 0) {
                 res.send(result)
             } else {

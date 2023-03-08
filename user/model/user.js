@@ -24,14 +24,15 @@ const userSchema = new Schema ({
         type: String,
         required: true
     },
+    server: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'Role',
+        required: true
+    },
     role: {
         type: String,
     },
-    server: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'Role'
-    },
     created: {
-        type: String
+        type: Date
     }
 });
 
