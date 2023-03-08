@@ -37,7 +37,7 @@ UsersController.getAllUsers = async (req, res) => {
     try {
         // if (rol == "admin") {
             let result = await User.find({})
-                // .populate('server');
+                .populate('server');
 
             if (result.length > 0) {
                 res.send(result)
@@ -46,7 +46,7 @@ UsersController.getAllUsers = async (req, res) => {
             }
         // }
     } catch (error) {
-        res.send(error);
+        res.send("error" + error);
     }
 };
 
