@@ -7,6 +7,8 @@ const mountRouter = require('./mounts/view/mountsRouter');
 const serverRouter = require('./servuser/view/serverRouter');
 const buymountRouter = require('./buymount/view/buymountRouter')
 const buyraidRouter = require('./buyraid/view/buyraidRouter')
+const buymythicplusRouter = require('./buymythicplus/view/buymythicplusRouter')
+
 
 router.use('/users', usersRouter);
 router.use('/mythicplus', mythicplusRouter)
@@ -15,5 +17,6 @@ router.use('/mount', mountRouter)
 router.use('/servers', serverRouter)
 router.use('/buymount', buymountRouter)
 router.use('/buyraid', buyraidRouter)
+router.use('/buymythicplus', buymythicplusRouter)
 
 module.exports = router
