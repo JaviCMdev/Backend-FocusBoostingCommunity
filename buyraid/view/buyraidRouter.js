@@ -6,7 +6,7 @@ const auth = require('../../middlewares/auth');
 
 const BuyraidController = require('../controller/buyraidController')
 
-router.post('/getAll', auth, BuyraidController.getAllBuyraid)
+router.get('/getAll', BuyraidController.getAllBuyraid)
 router.post('/newbuyraid', auth, BuyraidController.newBuyraid)
 router.put('/updatebuyraid', auth, BuyraidController.updateBuyraid)
 

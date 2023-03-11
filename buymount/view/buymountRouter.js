@@ -6,7 +6,7 @@ const auth = require('../../middlewares/auth');
 
 const BuymountController = require('../controller/buymountController')
 
-router.post('/getAll', auth, BuymountController.getAllBuymount)
+router.get('/getAll', BuymountController.getAllBuymount)
 router.post('/newbuymount', auth, BuymountController.newBuymount)
 router.put('/updatebuymount', auth, BuymountController.updateBuymount)
 
