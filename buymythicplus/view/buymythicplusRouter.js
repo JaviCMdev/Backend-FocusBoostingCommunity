@@ -6,7 +6,7 @@ const auth = require('../../middlewares/auth');
 
 const buymythicplusController = require('../controller/buymythicplusController')
 
-router.post('/getAll', auth, buymythicplusController.getAllBuymythicplus)
+router.get('/getAll', buymythicplusController.getAllBuymythicplus)
 router.post('/newbuymythicplus', auth, buymythicplusController.newBuymythicplus)
 router.put('/updatebuymythicplus', auth, buymythicplusController.updateBuymythicplus)
 
