@@ -46,22 +46,28 @@ BuyraidController.newBuyraid= async (req, res) => {
 
 BuyraidController.updateBuyraid = async (req, res) => {
 
-    let idbuyraid = req.body.idbuyraid;
-    let newClaimed = req.body.claimed;
-    let newDone = req.body.done;
+    let idbuyraid = JSON.parse(req.body.data).idbuyraid;
+    let newPending = JSON.parse(req.body.data).pending;
+    let newClaimed = JSON.parse(req.body.data).claimed;
+    let newClaimedby = JSON.parse(req.body.data).claimedby
+    let newDone = JSON.parse(req.body.data).done;
     
     try {
         let updated = await Buyraid.findOneAndUpdate(
             { _id: idbuyraid },
             {
+                pending: newPending,
                 claimed: newClaimed,
+                claimedby: newClaimedby,
                 done: newDone,
             }).setOptions({ returnDocument: 'after' })
         if (updated) {
             res.send(`Buyraid actualizado`)
+            console.log(updated)
         }
     } catch (error) {
         res.send("Error al actualizar la venta de la raid", error);
+        console.log("error" + error)
     }
 };
 

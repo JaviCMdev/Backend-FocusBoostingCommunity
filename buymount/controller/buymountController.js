@@ -46,15 +46,19 @@ BuymountController.newBuymount = async (req, res) => {
 
 BuymountController.updateBuymount = async (req, res) => {
 
-    let idbuymount = req.body.idbuymount;
-    let newClaimed = req.body.claimed;
-    let newDone = req.body.done;
+    let idbuymount = JSON.parse(req.body.data).idbuymount;
+    let newPending = JSON.parse(req.body.data).pending;
+    let newClaimed = JSON.parse(req.body.data).claimed;
+    let newClaimedby = JSON.parse(req.body.data).claimedby
+    let newDone = JSON.parse(req.body.data).done;
     
     try {
         let updated = await Buymount.findOneAndUpdate(
             { _id: idbuymount },
             {
+                pending: newPending,
                 claimed: newClaimed,
+                claimedby: newClaimedby,
                 done: newDone,
             }).setOptions({ returnDocument: 'after' })
         if (updated) {

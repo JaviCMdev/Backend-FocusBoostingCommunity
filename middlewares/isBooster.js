@@ -1,7 +1,9 @@
 const  User  = require('../user/model/user');
 
 module.exports = (req, res, next) => {
-    let _id = req.body._id;
+    let _id = JSON.parse(req.body.data)._id;
+    // console.log(JSON.parse(req.body.data)._id)
+    // console.log(req.body.data)
 
     User.find({
          _id : _id 
@@ -12,6 +14,6 @@ module.exports = (req, res, next) => {
             res.send(`Forbidden access`)
         }
     }).catch(error => {
-        res.send(`Introduce a valid user id`)
+        res.send(`Introduce a valid user id` + error)
     })
 };

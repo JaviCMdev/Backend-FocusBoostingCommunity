@@ -46,22 +46,26 @@ BuymythicplusController.newBuymythicplus = async (req, res) => {
 
 BuymythicplusController.updateBuymythicplus = async (req, res) => {
 
-    let idbuymythicplus = req.body.idbuymythicplus;
-    let newClaimed = req.body.claimed;
-    let newDone = req.body.done;
+    let idbuymythicplus = JSON.parse(req.body.data).idbuymythicplus;
+    let newPending = JSON.parse(req.body.data).pending;
+    let newClaimed = JSON.parse(req.body.data).claimed;
+    let newClaimedby = JSON.parse(req.body.data).claimedby
+    let newDone = JSON.parse(req.body.data).done;
     
     try {
         let updated = await Buymythicplus.findOneAndUpdate(
             { _id: idbuymythicplus },
             {
+                pending: newPending,
                 claimed: newClaimed,
+                claimedby: newClaimedby,
                 done: newDone,
             }).setOptions({ returnDocument: 'after' })
         if (updated) {
             res.send(`Buymythicplus actualizado`)
         }
     } catch (error) {
-        res.send("Error al actualizar la venta de montura", error);
+        res.send("Error al actualizar la venta de la Mitica+", error);
     }
 };
 

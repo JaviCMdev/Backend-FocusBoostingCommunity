@@ -24,7 +24,7 @@ const purchasemythicplusSchema = new Schema ({
         type: Boolean
     },
     created: {
-        type: Date
+        type: String
     },
     claimedby: {
         type: String

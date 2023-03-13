@@ -32,7 +32,7 @@ const userSchema = new Schema ({
         type: String,
     },
     created: {
-        type: Date
+        type: String
     }
 });
 

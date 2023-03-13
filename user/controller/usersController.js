@@ -52,12 +52,12 @@ UsersController.getAllUsers = async (req, res) => {
 
 UsersController.updateUser = async (req, res) => {
 
-    let password = bcrypt.hashSync(req.body.password, Number.parseInt(authConfig.ROUNDS));
+    // let password = bcrypt.hashSync(req.body.password, Number.parseInt(authConfig.ROUNDS));
 
-    let _id = req.body._id;
+    let iduser = req.body.iduser;
     let newName = req.body.name;
     let newEmail = req.body.email;
-    let newPassword = password;
+    // let newPassword = password;
     let newBattletag = req.body.battletag;
     let newDiscord = req.body.discord;
     let newRole = req.body.role;
@@ -66,11 +66,11 @@ UsersController.updateUser = async (req, res) => {
 
     try {
         let updated = await User.findOneAndUpdate(
-            { _id: _id },
+            { _id: iduser },
             {
                 name: newName,
                 email: newEmail,
-                password: newPassword,
+                // password: newPassword,
                 battletag: newBattletag,
                 discord: newDiscord,
                 role: newRole,
