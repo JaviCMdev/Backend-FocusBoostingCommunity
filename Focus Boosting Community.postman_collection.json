@@ -1,0 +1,960 @@
+{
+	"info": {
+		"_postman_id": "b2e6da7e-69c5-4900-a725-76406c145fd1",
+		"name": "Focus Boosting Community",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Endpoints",
+			"item": [
+				{
+					"name": "NewUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Dayanna\",\r\n    \"email\":\"dayanna@gmail.com\",\r\n    \"password\":\"dayanna12\",\r\n    \"battletag\":\"dayanna#1212\",\r\n    \"discord\":\"Dayanna#2249\",\r\n    \"server\":\"Sanguino\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/users/newuser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"users",
+								"newuser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"chusii@gmail.com\",\r\n    \"password\":\"chusii12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"63f74e654de4a0fd3a01d629\",\r\n    \"iduser\":\"640e4edc781dcca574735853\",\r\n    \"role\":\"booster\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/users/updateuser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"users",
+								"updateuser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll Users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"63f74e654de4a0fd3a01d629\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/users/getall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"users",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"63f74e654de4a0fd3a01d629\",\r\n    \"battletag\":\"harmony#1212\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/users/deleteuser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"users",
+								"deleteuser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mythicplus Endpoints",
+			"item": [
+				{
+					"name": "NewM+",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjc0ZTY1NGRlNGEwZmQzYTAxZDYyOSIsInJvbCI6ImFkbWluIiwiaWF0IjoxNjc3MTY0ODQ3LCJleHAiOjE2NzcyNTEyNDd9.PdcAsgHXK1ifWfodEpgvNH_mOsU48YSukGnUBBCo9AY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"63f74e654de4a0fd3a01d629\",\r\n    \"name\":\"Mythic +20\",\r\n    \"price\":650000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/mythicplus/newmythicplus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"mythicplus",
+								"newmythicplus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll M+",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/mythicplus/getall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"mythicplus",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update M+",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idservice\":\"63fdc8d8cbe6d91f8c14bc0d\",\r\n    \"_id\":\"63f74e654de4a0fd3a01d629\",\r\n    \"name\":\"Mythic +2\",\r\n    \"price\":70000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/mythicplus/updatemythicplus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"mythicplus",
+								"updatemythicplus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M+",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"63f74e654de4a0fd3a01d629\",\r\n    \"name\":\"Mythic +2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/mythicplus/deletemythicplus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"mythicplus",
+								"deletemythicplus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Server Endpoints",
+			"item": [
+				{
+					"name": "NewServer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"63f74e654de4a0fd3a01d629\",\r\n    \"name\":\"Elune\",\r\n    \"location\":\"fr\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/servers/newserver",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"servers",
+								"newserver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Server",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"63f74e654de4a0fd3a01d629\",\r\n    \"idserver\":\"640646b86ae61af1aa5901f2\",\r\n    \"name\":\"Sanguino\",\r\n    \"location\":\"es\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/servers/updateserver",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"servers",
+								"updateserver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll Servers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/servers/getall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"servers",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Raid Endpoints",
+			"item": [
+				{
+					"name": "New Raid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"63f74e654de4a0fd3a01d629\",\r\n    \"name\":\"VotI Raszageth Mythic\",\r\n    \"price\":10000000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/raid/newraid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"raid",
+								"newraid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetllAll Raids",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/raid/getall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"raid",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Raid",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idraid\":\"63fdc8d8cbe6d91f8c14bc0d\",\r\n    \"_id\":\"63f74e654de4a0fd3a01d629\",\r\n    \"name\":\"VotI Diurna Mythic\",\r\n    \"price\":5500000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/raid/updateraid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"raid",
+								"updateraid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Raid",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"63f74e654de4a0fd3a01d629\",\r\n    \"name\":\"VotI Diurna Mythic\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/raid/deleteraid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"raid",
+								"deleteraid"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mount Endpoints",
+			"item": [
+				{
+					"name": "New Mount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"63f74e654de4a0fd3a01d629\",\r\n    \"name\":\"Smoldering Ember Wyrm\",\r\n    \"price\":350000,\r\n    \"img\":\"https://www.warcraftmounts.com/images/skins/nightbane2mount.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/mount/newmount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"mount",
+								"newmount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll Mounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/mount/getall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"mount",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Mount",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idmount\":\"640728d54e3e763a0a638f2b\",\r\n    \"_id\":\"63f74e654de4a0fd3a01d629\",\r\n    \"name\": \"Stone Drake\",\r\n    \"price\": 350000,\r\n    \"img\": \"https://www.warcraftmounts.com/images/skins/dragondeepholmmount1purple.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/mount/updatemount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"mount",
+								"updatemount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mount",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"63f74e654de4a0fd3a01d629\",\r\n    \"name\":\"Voidtalon of the Dark Star\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/mount/deletemount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"mount",
+								"deletemount"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purchases Endpoints",
+			"item": [
+				{
+					"name": "Mythicplus Purchases",
+					"item": [
+						{
+							"name": "New Buymythicplus",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjc0ZTY1NGRlNGEwZmQzYTAxZDYyOSIsInJvbCI6ImFkbWluIiwiaWF0IjoxNjc4MzA2MDM0LCJleHAiOjE2NzgzOTI0MzR9.crL64uqDIP1CY-rCCWD3HevV-wZw8j_8Vm5poX9N5Hs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idUser\":\"63f74e654de4a0fd3a01d629\",\r\n    \"idMythicplus\":\"640722f9e649c95cf98db3fd\",\r\n    \"price\":105000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5500/buymythicplus/newbuymythicplus",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5500",
+									"path": [
+										"buymythicplus",
+										"newbuymythicplus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAll Mythicplus",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjc0ZTY1NGRlNGEwZmQzYTAxZDYyOSIsInJvbCI6ImFkbWluIiwiaWF0IjoxNjc4NTYwMjA0LCJleHAiOjE2Nzg2NDY2MDR9.l_c1xrot5-DScGwg2T9Kf7wOAfAhok_9bBLDuGU4FA8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idUser\":\"63f74e654de4a0fd3a01d629\",\r\n    \"idMythicplus\":\"640722f9e649c95cf98db3fd\",\r\n    \"price\":105000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5500/buymythicplus/getall",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5500",
+									"path": [
+										"buymythicplus",
+										"getall"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Purchase Mythicplus",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\":\"63f74e654de4a0fd3a01d629\",\r\n    \"idmythicplus\":\"640cc2210f56bdea363630e6\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5500/buymythicplus/deletebuymythicplus",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5500",
+									"path": [
+										"buymythicplus",
+										"deletebuymythicplus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Raid Purchases",
+					"item": [
+						{
+							"name": "New Buyraid",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjc0ZTY1NGRlNGEwZmQzYTAxZDYyOSIsInJvbCI6ImFkbWluIiwiaWF0IjoxNjc4MzA2MDM0LCJleHAiOjE2NzgzOTI0MzR9.crL64uqDIP1CY-rCCWD3HevV-wZw8j_8Vm5poX9N5Hs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idUser\":\"63f74e654de4a0fd3a01d629\",\r\n    \"idRaid\":\"640725c8718f8ba51574ca5c\",\r\n    \"price\":150000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5500/buyraid/newbuyraid",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5500",
+									"path": [
+										"buyraid",
+										"newbuyraid"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAll Buyraid",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjc0ZTY1NGRlNGEwZmQzYTAxZDYyOSIsInJvbCI6ImFkbWluIiwiaWF0IjoxNjc4NjU5MTg1LCJleHAiOjE2Nzg3NDU1ODV9.tDOZTGs0-NIWsiC2xVvueMBIwUhMG0MjdMOhvPUC_N0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5500/buyraid/getall",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5500",
+									"path": [
+										"buyraid",
+										"getall"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Buyraid",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\":\"63fdc59dcbe6d91f8c14bc07\",\r\n    \"idbuyraid\":\"640e4ef6781dcca574735888\",\r\n    \"pending\":\"false\",\r\n    \"claimed\":\"true\",\r\n    \"claimedby\":\"Chusii#2249\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5500/buyraid/updatebuyraid",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5500",
+									"path": [
+										"buyraid",
+										"updatebuyraid"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Mount Purchases",
+					"item": [
+						{
+							"name": "New Buymount",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjc0ZTY1NGRlNGEwZmQzYTAxZDYyOSIsInJvbCI6ImFkbWluIiwiaWF0IjoxNjc4Mjg4NTAyLCJleHAiOjE2NzgzNzQ5MDJ9.5p8XqRQDWdxnLleBtWUG1KiSlU1dMG1HDCtORJr4lKY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idUser\":\"63f74e654de4a0fd3a01d629\",\r\n    \"idMount\":\"640728984e3e763a0a638f22\",\r\n    \"price\":700000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5500/buymount/newbuymount",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5500",
+									"path": [
+										"buymount",
+										"newbuymount"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAll Buymount",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjc0ZTY1NGRlNGEwZmQzYTAxZDYyOSIsInJvbCI6ImFkbWluIiwiaWF0IjoxNjc4NTU4MDM4LCJleHAiOjE2Nzg2NDQ0Mzh9.FPF-L0T1KRIgjhf6Zsd_iCeVJhJBY17LTmSygTo-n3A",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5500/buymount/getall",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5500",
+									"path": [
+										"buymount",
+										"getall"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Purchase Mount",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\":\"63f74e654de4a0fd3a01d629\",\r\n    \"idmount\":\"6408ec52ab46db44782bf7d6\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5500/buymount/deletebuymount",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5500",
+									"path": [
+										"buymount",
+										"deletebuymount"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

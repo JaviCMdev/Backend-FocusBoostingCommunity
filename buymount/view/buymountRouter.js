@@ -10,8 +10,6 @@ const BuymountController = require('../controller/buymountController')
 router.get('/getAll', BuymountController.getAllBuymount)
 router.post('/newbuymount', auth, BuymountController.newBuymount)
 router.put('/updatebuymount', isBooster, BuymountController.updateBuymount)
-
-// Delete bloqueado por el momento
 router.delete('/deletebuymount', isAdmin, BuymountController.deleteBuymount)
 
 
