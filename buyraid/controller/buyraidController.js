@@ -65,4 +65,20 @@ BuyraidController.updateBuyraid = async (req, res) => {
     }
 };
 
+BuyraidController.deleteBuyraid = async (req, res) => {
+    let idraid = req.body.idraid;
+
+    try {
+        let deleted = await Buyraid.findOneAndDelete({
+            _id: idraid
+        })
+
+        if (deleted) {
+            res.send({ "Message": `Raid borrada correctamente` })
+        }
+    } catch (error) {
+        res.send("Error al borrar la Raid", error);
+    }
+};
+
 module.exports = BuyraidController

@@ -65,4 +65,20 @@ BuymythicplusController.updateBuymythicplus = async (req, res) => {
     }
 };
 
+BuymythicplusController.deleteBuymythicplus = async (req, res) => {
+    let idmythicplus = req.body.idmythicplus;
+
+    try {
+        let deleted = await Buymythicplus.findOneAndDelete({
+            _id: idmythicplus
+        })
+
+        if (deleted) {
+            res.send({ "Message": `Mythic+ borrada correctamente` })
+        }
+    } catch (error) {
+        res.send("Error al borrar la Mythic+", error);
+    }
+};
+
 module.exports = BuymythicplusController

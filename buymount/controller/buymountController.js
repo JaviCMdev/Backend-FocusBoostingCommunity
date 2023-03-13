@@ -66,20 +66,20 @@ BuymountController.updateBuymount = async (req, res) => {
 };
 // De momento no voy a dejar que se puedan borrar
 
-// BuymountController.deleteBuymount = async (req, res) => {
-//     let name = req.body.name;
+BuymountController.deleteBuymount = async (req, res) => {
+    let idmount = req.body.idmount;
 
-//     try {
-//         let deleted = await Buymount.findOneAndDelete({
-//             name: name
-//         })
+    try {
+        let deleted = await Buymount.findOneAndDelete({
+            _id: idmount
+        })
 
-//         if (deleted) {
-//             res.send({ "Message": `Mythic+ ${deleted.name} borrada correctamente` })
-//         }
-//     } catch (error) {
-//         res.send("Error al borrar la Mythic+", error);
-//     }
-// };
+        if (deleted) {
+            res.send({ "Message": `Mount borrada correctamente` })
+        }
+    } catch (error) {
+        res.send("Error al borrar la Mount", error);
+    }
+};
 
 module.exports = BuymountController
