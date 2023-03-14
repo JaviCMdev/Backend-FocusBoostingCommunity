@@ -33,52 +33,52 @@
 
 **Endpoints Usuario**
 - router.post("/newUser", UsersController.newUser);
-- router.post("/getAll", isAdmin, UsersController.getAllUsers);
-- router.put("/updateUser", isAdmin, UsersController.updateUser);
-- router.delete("/deleteUser", isAdmin, UsersController.deleteUser);
+- router.post("/getAll",auth, isAdmin, UsersController.getAllUsers);
+- router.put("/updateUser",auth, isAdmin, UsersController.updateUser);
+- router.delete("/deleteUser",auth, isAdmin, UsersController.deleteUser);
 - router.post("/login", UsersController.loginUser);
 
 **Endpoints Servers**
 - router.get('/getAll', serverController.getAllservers);
-- router.post("/newServer", isAdmin, serverController.newServer);
-- router.put("/updateServer", isAdmin, serverController.updateServer);
-- router.delete("/deleteServer", isAdmin, serverController.deleteServer);
+- router.post("/newServer",auth, isAdmin, serverController.newServer);
+- router.put("/updateServer",auth, isAdmin, serverController.updateServer);
+- router.delete("/deleteServer",auth, isAdmin, serverController.deleteServer);
 
 **Endpoints Mythic+**
 - router.get('/getAll', MythicplusController.getAllMythicplus)
-- router.post('/newmythicplus', isAdmin, MythicplusController.newMythicplus)
-- router.put('/updatemythicplus', isAdmin, MythicplusController.updateMythicplus)
-- router.delete('/deletemythicplus', isAdmin, MythicplusController.deleteMythicplus)
+- router.post('/newmythicplus',auth, isAdmin, MythicplusController.newMythicplus)
+- router.put('/updatemythicplus',auth, isAdmin, MythicplusController.updateMythicplus)
+- router.delete('/deletemythicplus',auth, isAdmin, MythicplusController.deleteMythicplus)
 
 **Endpoints Mounts**
 - router.get('/getAll', MountController.getAllMount)
-- router.post('/newmount', isAdmin, MountController.newMount)
-- router.put('/updatemount', isAdmin, MountController.updateMount)
-- router.delete('/deletemount', isAdmin, MountController.deleteMount)
+- router.post('/newmount',auth, isAdmin, MountController.newMount)
+- router.put('/updatemount',auth, isAdmin, MountController.updateMount)
+- router.delete('/deletemount',auth, isAdmin, MountController.deleteMount)
 
 **Endpoints Raids**
 - router.get('/getAll', RaidController.getAllRaid)
-- router.post('/newraid', isAdmin, RaidController.newRaid)
-- router.put('/updateraid', isAdmin, RaidController.updateRaid)
-- router.delete('/deleteraid', isAdmin, RaidController.deleteRaid)
+- router.post('/newraid',auth, isAdmin, RaidController.newRaid)
+- router.put('/updateraid',auth, isAdmin, RaidController.updateRaid)
+- router.delete('/deleteraid',auth, isAdmin, RaidController.deleteRaid)
 
 **Endpoints Compras Mythic+**
-- router.get('/getAll', buymythicplusController.getAllBuymythicplus)
+- router.get('/getAll',auth, buymythicplusController.getAllBuymythicplus)
 - router.post('/newbuymythicplus', auth, buymythicplusController.newBuymythicplus)
-- router.put('/updatebuymythicplus', isBooster, buymythicplusController.updateBuymythicplus)
-- router.delete('/deletebuymythicplus', isAdmin, buymythicplusController.deleteBuymythicplus)
+- router.put('/updatebuymythicplus',auth, isBooster, buymythicplusController.updateBuymythicplus)
+- router.delete('/deletebuymythicplus',auth, isAdmin, buymythicplusController.deleteBuymythicplus)
 
 **Endpoints Compras Mounts**
-- router.get('/getAll', BuymountController.getAllBuymount)
+- router.get('/getAll',auth, BuymountController.getAllBuymount)
 - router.post('/newbuymount', auth, BuymountController.newBuymount)
-- router.put('/updatebuymount', isBooster, BuymountController.updateBuymount)
-- router.delete('/deletebuymount', isAdmin, BuymountController.deleteBuymount)
+- router.put('/updatebuymount',auth, isBooster, BuymountController.updateBuymount)
+- router.delete('/deletebuymount',auth, isAdmin, BuymountController.deleteBuymount)
 
 **Endpoints Compras Raids**
-- router.get('/getAll', BuyraidController.getAllBuyraid)
+- router.get('/getAll',auth, BuyraidController.getAllBuyraid)
 - router.post('/newbuyraid', auth, BuyraidController.newBuyraid)
-- router.put('/updatebuyraid', isBooster, BuyraidController.updateBuyraid)
-- router.delete('/deletebuyraid', isAdmin, BuyraidController.deleteBuyraid)
+- router.put('/updatebuyraid',auth, isBooster, BuyraidController.updateBuyraid)
+- router.delete('/deletebuyraid',auth, isAdmin, BuyraidController.deleteBuyraid)
 
 **Añadido archivo Postman**
 - En la carpeta raiz del proyecto se encuentra el archivo "Focus Boosting Community.postman_collection" que es un .json con todos los endpoints añadidos.
