@@ -8,10 +8,10 @@ const isBooster = require('../../middlewares/isBooster')
 
 const buymythicplusController = require('../controller/buymythicplusController')
 
-router.get('/getAll', buymythicplusController.getAllBuymythicplus)
+router.get('/getAll',auth, buymythicplusController.getAllBuymythicplus)
 router.post('/newbuymythicplus', auth, buymythicplusController.newBuymythicplus)
-router.put('/updatebuymythicplus', isBooster, buymythicplusController.updateBuymythicplus)
-router.delete('/deletebuymythicplus', isAdmin, buymythicplusController.deleteBuymythicplus)
+router.put('/updatebuymythicplus',auth, isBooster, buymythicplusController.updateBuymythicplus)
+router.delete('/deletebuymythicplus',auth, isAdmin, buymythicplusController.deleteBuymythicplus)
 
 
 module.exports = router;

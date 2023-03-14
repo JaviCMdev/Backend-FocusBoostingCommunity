@@ -8,9 +8,9 @@ const isBooster = require('../../middlewares/isBooster')
 
 const BuyraidController = require('../controller/buyraidController')
 
-router.get('/getAll', BuyraidController.getAllBuyraid)
+router.get('/getAll',auth, BuyraidController.getAllBuyraid)
 router.post('/newbuyraid', auth, BuyraidController.newBuyraid)
-router.put('/updatebuyraid', isBooster, BuyraidController.updateBuyraid)
-router.delete('/deletebuyraid', isAdmin, BuyraidController.deleteBuyraid)
+router.put('/updatebuyraid', auth, isBooster, BuyraidController.updateBuyraid)
+router.delete('/deletebuyraid', auth, isAdmin, BuyraidController.deleteBuyraid)
 
 module.exports = router;

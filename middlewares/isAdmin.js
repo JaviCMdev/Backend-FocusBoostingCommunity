@@ -2,7 +2,7 @@ const  User  = require('../user/model/user');
 
 module.exports = (req, res, next) => {
     let _id = req.body._id;
-
+    
     User.find({
          _id : _id 
     }).then(foundUser => {

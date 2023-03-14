@@ -46,11 +46,11 @@ BuymythicplusController.newBuymythicplus = async (req, res) => {
 
 BuymythicplusController.updateBuymythicplus = async (req, res) => {
 
-    let idbuymythicplus = JSON.parse(req.body.data).idbuymythicplus;
-    let newPending = JSON.parse(req.body.data).pending;
-    let newClaimed = JSON.parse(req.body.data).claimed;
-    let newClaimedby = JSON.parse(req.body.data).claimedby
-    let newDone = JSON.parse(req.body.data).done;
+    let idbuymythicplus = req.body.idbuymythicplus;
+    let newPending = req.body.pending;
+    let newClaimed = req.body.claimed;
+    let newClaimedby = req.body.claimedby
+    let newDone = req.body.done;
     
     try {
         let updated = await Buymythicplus.findOneAndUpdate(

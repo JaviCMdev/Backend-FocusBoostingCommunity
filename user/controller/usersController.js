@@ -95,6 +95,9 @@ UsersController.deleteUser = async (req, res) => {
         if (deleted) {
             res.send({ "Message": `Usuario ${deleted.name} borrado correctamente` })
         }
+        else {
+            return res.send({"Message" : "Ha ocurrido un error al borrar."})
+        }
     } catch (error) {
         res.send("Error al borrar usuario", error);
     }

@@ -1,9 +1,7 @@
 const  User  = require('../user/model/user');
 
 module.exports = (req, res, next) => {
-    let _id = JSON.parse(req.body.data)._id;
-    // console.log(JSON.parse(req.body.data)._id)
-    // console.log(req.body.data)
+    let _id = req.body._id;
 
     User.find({
          _id : _id 

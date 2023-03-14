@@ -45,13 +45,11 @@ BuyraidController.newBuyraid= async (req, res) => {
 }
 
 BuyraidController.updateBuyraid = async (req, res) => {
-
-    let idbuyraid = JSON.parse(req.body.data).idbuyraid;
-    let newPending = JSON.parse(req.body.data).pending;
-    let newClaimed = JSON.parse(req.body.data).claimed;
-    let newClaimedby = JSON.parse(req.body.data).claimedby
-    let newDone = JSON.parse(req.body.data).done;
-    
+    let idbuyraid = req.body.idbuyraid;
+    let newPending = req.body.pending;
+    let newClaimed = req.body.claimed;
+    let newClaimedby = req.body.claimedby
+    let newDone = req.body.done;
     try {
         let updated = await Buyraid.findOneAndUpdate(
             { _id: idbuyraid },

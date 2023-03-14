@@ -7,10 +7,10 @@ const isBooster = require('../../middlewares/isBooster')
 
 const BuymountController = require('../controller/buymountController')
 
-router.get('/getAll', BuymountController.getAllBuymount)
+router.get('/getAll',auth, BuymountController.getAllBuymount)
 router.post('/newbuymount', auth, BuymountController.newBuymount)
-router.put('/updatebuymount', isBooster, BuymountController.updateBuymount)
-router.delete('/deletebuymount', isAdmin, BuymountController.deleteBuymount)
+router.put('/updatebuymount',auth, isBooster, BuymountController.updateBuymount)
+router.delete('/deletebuymount',auth, isAdmin, BuymountController.deleteBuymount)
 
 
 module.exports = router;
